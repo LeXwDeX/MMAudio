@@ -1,0 +1,21 @@
+services:
+  mmaudio:
+    build: .
+    ports:
+      - "7860:7860"
+    environment:
+      GRADIO_SERVER_NAME: "0.0.0.0"
+      PORT: "7860"
+      MMAUDIO_CACHE_DIR: "/data/mmaudio_cache"
+      NVIDIA_VISIBLE_DEVICES: "all"
+      NVIDIA_DRIVER_CAPABILITIES: "compute,utility"
+      UV_EXTRA_INDEX_URL: "https://download.pytorch.org/whl/cu129"
+    volumes:
+      - ./.cache:/data/mmaudio_cache
+      - ./output:/app/output
+      - ./weights:/app/weights
+      - ./ext_weights:/app/ext_weights
+    device_requests:
+      - driver: nvidia
+        count: all
+        capabilities: ["gpu"]

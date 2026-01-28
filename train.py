@@ -4,6 +4,10 @@ import random
 from datetime import timedelta
 from pathlib import Path
 
+from mmaudio.utils.cache_utils import configure_local_cache
+
+configure_local_cache()
+
 import hydra
 import numpy as np
 import torch

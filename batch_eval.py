@@ -2,6 +2,10 @@ import logging
 import os
 from pathlib import Path
 
+from mmaudio.utils.cache_utils import configure_local_cache
+
+configure_local_cache()
+
 import hydra
 import torch
 import torch.distributed as distributed

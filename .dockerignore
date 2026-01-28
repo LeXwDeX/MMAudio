@@ -1,0 +1,8 @@
+.git
+.venv
+__pycache__
+.cache
+output
+weights
+ext_weights
+.gradio

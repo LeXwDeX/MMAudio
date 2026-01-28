@@ -2,6 +2,10 @@ import logging
 from argparse import ArgumentParser
 from pathlib import Path
 
+from mmaudio.utils.cache_utils import configure_local_cache
+
+configure_local_cache()
+
 import torch
 import torchaudio
 
